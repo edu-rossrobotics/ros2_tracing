@@ -40,12 +40,18 @@ if(BUILD_TESTING)
     rclcpp
     std_msgs
   )
+  target_link_libraries(test_publisher
+    tracetools::tracetools
+  )
   add_executable(test_intra
     src/test_intra.cpp
   )
   ament_target_dependencies(test_intra
     rclcpp
     std_msgs
+  )
+  target_link_libraries(test_intra
+    tracetools::tracetools
   )
   add_executable(test_lifecycle_node
     src/test_lifecycle_node.cpp
@@ -54,12 +60,18 @@ if(BUILD_TESTING)
     rclcpp
     rclcpp_lifecycle
   )
+  target_link_libraries(test_lifecycle_node
+    tracetools::tracetools
+  )
   add_executable(test_lifecycle_client
     src/test_lifecycle_client.cpp
   )
   ament_target_dependencies(test_lifecycle_client
     lifecycle_msgs
     rclcpp
+  )
+  target_link_libraries(test_lifecycle_client
+    tracetools::tracetools
   )
   add_executable(test_ping
     src/test_ping.cpp
@@ -68,6 +80,9 @@ if(BUILD_TESTING)
     rclcpp
     std_msgs
   )
+  target_link_libraries(test_publisher
+    tracetools::tracetools
+  )
   add_executable(test_pong
     src/test_pong.cpp
   )
@@ -75,18 +90,27 @@ if(BUILD_TESTING)
     rclcpp
     std_msgs
   )
+  target_link_libraries(test_publisher
+    tracetools::tracetools
+  )
   add_executable(test_timer
     src/test_timer.cpp
   )
   ament_target_dependencies(test_timer
     rclcpp
   )
+  target_link_libraries(test_publisher
+    tracetools::tracetools
+  )
   add_executable(test_service_ping
     src/test_service_ping.cpp
   )
-  ament_target_dependencies(test_service_ping
+  ament_target_dependencies(test_publisher
     rclcpp
     std_srvs
+  )
+  target_link_libraries(test_service_ping
+    tracetools::tracetools
   )
   add_executable(test_service_pong
     src/test_service_pong.cpp
@@ -94,6 +118,9 @@ if(BUILD_TESTING)
   ament_target_dependencies(test_service_pong
     rclcpp
     std_srvs
+  )
+  target_link_libraries(test_service_pong
+    tracetools::tracetools
   )
 
   install(TARGETS
